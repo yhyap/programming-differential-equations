@@ -8,7 +8,7 @@ For the Udacity's part, the repository currently comprises the following problem
 
 Lesson 1: Houston we have a problem
 -----------------------------------
-Using ODE to calculate how much the acceleration needed to bring Apollo 13 back to earth safely.
+Using ODE to calculate how much the acceleration (with the direction) needed from the rocket booster to bring Apollo 13 back to earth safely.
 
 
 ------------------------------------------------------------------------------
@@ -27,5 +27,5 @@ Solvers used include Forward Euler, 4th order Runge-Kutta and Backward Euler met
 ------------------------------------------------------------------------------
 Lotka-Volterra example
 ----------------------
-Code from scipy example
+Example from scipy.
 
