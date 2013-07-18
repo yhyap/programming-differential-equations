@@ -5,9 +5,11 @@ from matplotlib import pyplot
 moon_distance = 384e6                   # m
 h = 0.1                                 # s
 g = 9.81                                # m / s2
-acceleration = numpy.array([0., -g])    # acceleration in horizontal, vertical
 initial_speed = 20.                     # m / s
+acceleration = numpy.array([0., -g])    # acceleration in horizontal, vertical
 
+
+# simple orbit
 def orbit():
     num_steps = 50
     x = numpy.zeros([num_steps + 1, 2])
@@ -17,9 +19,6 @@ def orbit():
         x[i, 1] = moon_distance*math.sin(angle)
 
     return x
-
-x = orbit()
-
 
 def trajectory():
     angles = numpy.linspace(20., 70., 6)
