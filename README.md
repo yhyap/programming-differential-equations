@@ -8,7 +8,12 @@ For the Udacity's part, the repository currently comprises the following problem
 
 Lesson 1: Houston we have a problem
 -----------------------------------
-Using ODE to calculate how much the acceleration (with the direction) needed from the rocket booster to bring Apollo 13 back to earth safely.
+Using ODE to calculate how much the acceleration (with the direction) needed from the rocket booster to change the trajectory and bring the Apollo 13 back to earth safely.
+
+
+Lesson 2: Contagion
+-------------------
+Using SEIR model to simulate an epidemic, and work out the number of people in population in Susceptible, Exposed, Infected, Recovered
 
 
 ------------------------------------------------------------------------------

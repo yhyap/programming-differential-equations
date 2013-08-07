@@ -20,6 +20,7 @@ def orbit():
 
     return x
 
+
 def trajectory():
     angles = numpy.linspace(20., 70., 6)
     num_steps = 30
