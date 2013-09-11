@@ -1,5 +1,7 @@
 # PROBLEM 3
 # 
+# Assuming no human death
+#
 # Modify the prevent_malaria function below to 
 # implement the Forward Euler Method. 
 # 
@@ -15,6 +17,7 @@
 # its mortality rate.
 
 import matplotlib.pyplot
+import numpy
 
 h = 0.1 # days
 end_time = 400. # days
@@ -39,10 +42,15 @@ def prevent_malaria():
     infected_mosquitoes[0] = 1e6
 
     for step in range(num_steps):
-        ###Your code here.
-        infected_humans[step + 1] = ###Your code here.
-        infected_mosquitoes[step + 1] = ###Your code here.
-
+        net_factor = 1.0
+        if h * step >= 100.:   # after 100 days, the net_factor will be reduced by bites_reduction_by_net
+            net_factor = 1.0 - bite_reduction_by_net
+        infected_humans[step + 1] = infected_humans[step] \
+            + h*(net_factor*bites_per_day_and_mosquito*infected_mosquitoes[step]*(total_humans-infected_humans[step])/total_humans*transmission_probability_mosquito_to_human \
+            - 1.0/human_recovery_time * infected_humans[step])
+        infected_mosquitoes[step + 1] = infected_mosquitoes[step] \
+            + h*(net_factor*bites_per_day_and_mosquito*infected_humans[step]*(total_mosquitoes-infected_mosquitoes[step])/total_humans*transmission_probability_human_to_mosquito \
+            - 1.0/mosquito_lifetime * infected_mosquitoes[step])
     return infected_humans, infected_mosquitoes
 
 infected_humans, infected_mosquitoes = prevent_malaria()
