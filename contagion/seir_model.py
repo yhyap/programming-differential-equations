@@ -1,4 +1,6 @@
 # SEIR model
+# Susceptible, Exposed (not yet infectious), Infectious, Recovered
+# Compartmental models in epidemiology
 
 # QUIZ
 # 
@@ -9,7 +11,7 @@
 import matplotlib.pyplot
 import numpy
 
-h = 0.5 # days
+h = 1.9 # days
 transmission_coeff = 5e-9 # 1 / day person
 latency_time = 1. # days
 infectious_time = 5. # days
